@@ -86,7 +86,7 @@ const DoctorManagement: React.FC = () => {
           to_name: name,
           username: email,
           password: tempPassword,
-          login_url: window.location.origin + '/login'
+          login_url: 'https://reagahealthcare.netlify.app/login'
         }, 
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );

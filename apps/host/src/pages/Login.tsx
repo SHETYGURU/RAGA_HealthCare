@@ -44,7 +44,7 @@ const Login: React.FC = () => {
               {
                 to_name: loginEmail.split('@')[0],
                 to_email: loginEmail,
-                reset_link: window.location.origin + '/login',
+                reset_link: 'https://reagahealthcare.netlify.app/login',
                 message: 'A password reset request was initiated.'
               },
               import.meta.env.VITE_EMAILJS_PUBLIC_KEY
