@@ -39,15 +39,15 @@ const Login: React.FC = () => {
         try {
           if (typeof emailjs !== 'undefined') {
             await emailjs.send(
-              'service_raga', // Service ID
-              'template_3larvgd', 
+              import.meta.env.VITE_EMAILJS_SERVICE_ID,
+              import.meta.env.VITE_EMAILJS_TEMPLATE_ID, 
               {
                 to_name: loginEmail.split('@')[0],
                 to_email: loginEmail,
                 reset_link: window.location.origin + '/login',
                 message: 'A password reset request was initiated.'
               },
-              'Hj5oyCaY6ckccJzRE' // Public Key
+              import.meta.env.VITE_EMAILJS_PUBLIC_KEY
             );
           }
         } catch (mailErr) {

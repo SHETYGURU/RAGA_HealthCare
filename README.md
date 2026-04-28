@@ -61,6 +61,23 @@ For deep technical insights, explore our documentation directory:
 
 ---
 
+## 🚀 Deployment (Netlify)
+
+This project is pre-configured for **Netlify** hosting:
+
+1.  **Build Settings**:
+    *   **Build Command**: `npm run build`
+    *   **Publish Directory**: `apps/host/dist`
+2.  **Environment Variables**:
+    You must add the following variables in the Netlify Dashboard (Site Settings > Build & Deploy > Environment):
+    *   `VITE_FIREBASE_API_KEY`
+    *   `VITE_FIREBASE_AUTH_DOMAIN`
+    *   `VITE_FIREBASE_PROJECT_ID`
+    *   `VITE_EMAILJS_SERVICE_ID`
+    *   ... (and others from your `.env` file)
+
+---
+
 ## 🛠 Tech Stack
 
 *   **Frontend**: React 18, TypeScript, Vite.

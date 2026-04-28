@@ -61,6 +61,16 @@ For deep technical insights, explore our documentation directory:
 
 ---
 
+## 🚀 Deployment (Netlify)
+
+This project is pre-configured for **Netlify** hosting:
+
+1.  **Build Command**: `npm run build`
+2.  **Publish Directory**: `dist`
+3.  **Environment Variables**: Ensure all `VITE_` variables from `.env` are added to the Netlify UI.
+
+---
+
 ## 🛠 Tech Stack
 
 *   **Frontend**: React 18, TypeScript, Vite.
