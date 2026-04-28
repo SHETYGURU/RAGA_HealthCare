@@ -1,0 +1,14 @@
+{
+  "name": "raga-ai-healthcare",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "start:mfe": "npm run dev --workspace=apps/host",
+    "build": "npm run build --workspaces"
+  },
+  "devDependencies": {
+  }
+}

@@ -1,0 +1,20 @@
+# Node
+node_modules/
+dist/
+dev-dist/
+.dist/
+*.log
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Firebase
+.firebase/
+firebase-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local

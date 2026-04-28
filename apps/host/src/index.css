@@ -1,0 +1,92 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ===== Custom Animations ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.4; box-shadow: 0 0 8px 2px rgba(99, 102, 241, 0.15); }
+  50% { opacity: 1; box-shadow: 0 0 20px 6px rgba(99, 102, 241, 0.3); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out both;
+}
+.animate-fade-in-scale {
+  animation: fadeInScale 0.4s ease-out both;
+}
+.animate-slide-in-left {
+  animation: slideInLeft 0.4s ease-out both;
+}
+.animate-slide-down {
+  animation: slideDown 0.25s ease-out both;
+}
+
+/* Staggered children animation */
+.stagger-children > * {
+  animation: fadeInUp 0.5s ease-out both;
+}
+.stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.15s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.25s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(7) { animation-delay: 0.35s; }
+.stagger-children > *:nth-child(8) { animation-delay: 0.4s; }
+
+/* Glowing Skeleton */
+.skeleton-glow {
+  background: linear-gradient(90deg, #e2e8f0 25%, #c7d2fe 50%, #e2e8f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite, glowPulse 2s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+.dark .skeleton-glow {
+  background: linear-gradient(90deg, #1e293b 25%, #312e81 50%, #1e293b 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite, glowPulse 2s ease-in-out infinite;
+}
+
+/* ===== Base Styles ===== */
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body, body.dark-body {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+/* Smooth transitions for dark mode */
+*, *::before, *::after {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.15s ease, box-shadow 0.3s ease;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+.dark ::-webkit-scrollbar-thumb { background: #334155; }
