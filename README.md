@@ -1,0 +1,89 @@
+# RAGA HealthCare Platform
+
+Welcome to the **RAGA HealthCare** platform, a premium, high-performance hospital management system built with React, TypeScript, and Firebase. This platform is designed for state-of-the-art medical facility management.
+
+## 🚀 Quick Start
+
+### 1. Installation
+```bash
+npm install
+```
+
+### 2. Run Locally
+```bash
+npm run dev
+```
+
+### 3. Build for Production
+```bash
+npm run build
+```
+
+---
+
+## 🔐 Demo Credentials
+
+Use the **"Quick Access"** buttons on the login screen for instant entry.
+
+### Administrative Accounts
+| Role | Email | Password |
+| :--- | :--- | :--- |
+| **Super Admin** | `admin@raga.ai` | `admin123` |
+| **Hospital Manager** | `manager@hospital.com` | `admin123` |
+
+### Doctor Accounts
+| Role | Email | Password |
+| :--- | :--- | :--- |
+| **Primary Doctor** | `koushi098@gmail.com` | `tu6uwq2lA1!` |
+| **Sample Doctor** | `doctor@hospital.com` | `password123` |
+
+> [!IMPORTANT]
+> **Authentication Lock**: Public registration has been disabled. Access is only granted to pre-approved accounts. If you are a new doctor, please contact your System Administrator to have your credentials provisioned.
+
+---
+
+## 📧 Email & Notifications
+
+The platform is integrated with **EmailJS** for branded communications:
+- **Service ID**: `service_raga`
+- **Password Reset Template**: `template_3larvgd`
+- **Account Creation Template**: `template_dsbh4kf`
+
+---
+
+## 📚 Documentation Suite
+
+For deep technical insights, explore our documentation directory:
+
+*   **[Architecture Overview](./documents/architecture.md)**: Tech stack, component structure, and design system.
+*   **[Authentication Guide](./documents/authentication_guide.md)**: Deep dive into the Login flow, EmailJS integration, and Firebase Auth rules.
+*   **[Control Flow](./documents/control_flow.md)**: App initialization, routing, and error handling.
+*   **[Sequence Diagrams](./documents/sequence_diagrams.md)**: Visual workflows for registration, batch updates, and timings.
+*   **[Use Cases](./documents/use_cases.md)**: Comprehensive list of user interactions and flows.
+*   **[EmailJS Setup](./documents/emailjs_template.md)**: HTML templates and configuration for notifications.
+
+---
+
+## ✨ Key Features
+
+*   **Premium UI/UX**: Dark mode, glassmorphism, and smooth micro-animations.
+*   **Patient Directory**: Bulk status updates, multi-selection, and PDF form generation.
+*   **Advanced Scheduling**: Multi-break management and real-time availability tracking.
+*   **Dynamic Analytics**: Visualized flow trends and capacity monitoring.
+*   **Admin Utilities**: System-wide data randomization and database repair tools.
+*   **Email Automation**: Integrated branded email notifications for password resets and account creation.
+
+---
+
+## 🛠 Tech Stack
+
+*   **Frontend**: React 18, TypeScript, Vite.
+*   **Styling**: Tailwind CSS + Vanilla CSS (Aesthetic-first approach).
+*   **Database**: Google Firebase (Firestore, Authentication).
+*   **Notifications**: EmailJS.
+*   **Icons**: Lucide React.
+*   **Charts**: Recharts.
+
+---
+
+© 2026 RAGA HealthCare Systems. All rights reserved.
