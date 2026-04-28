@@ -24,5 +24,19 @@ export default defineConfig({
     }
   },
   server: { port: 5000, strictPort: true },
-  build: { target: 'esnext' }
+  build: { 
+    target: 'esnext',
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('firebase')) return 'vendor-firebase';
+            if (id.includes('recharts')) return 'vendor-charts';
+            if (id.includes('jspdf') || id.includes('html2canvas')) return 'vendor-utils';
+            return 'vendor';
+          }
+        }
+      }
+    }
+  }
 })

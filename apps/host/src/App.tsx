@@ -2,17 +2,17 @@ import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
-import Settings from './pages/Settings';
-import DoctorManagement from './pages/DoctorManagement';
-import DoctorSchedule from './pages/DoctorSchedule';
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+const Settings = lazy(() => import('./pages/Settings'));
+const DoctorManagement = lazy(() => import('./pages/DoctorManagement'));
+const DoctorSchedule = lazy(() => import('./pages/DoctorSchedule'));
+const PatientModule = lazy(() => import('./modules/PatientModule'));
+const AnalyticsModule = lazy(() => import('./modules/AnalyticsModule'));
+
 import { useAuthStore } from './store/useAuthStore';
 import { auth } from './firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { doctorService } from './services/doctorService';
-
-const PatientModule = lazy(() => import('./modules/PatientModule'));
-const AnalyticsModule = lazy(() => import('./modules/AnalyticsModule'));
 
 const FallbackLoader = () => (
   <div className="h-[calc(100vh-80px)] w-full flex items-center justify-center">
@@ -60,12 +60,12 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Layout />}>
-          <Route index element={<Dashboard />} />
+          <Route index element={<Suspense fallback={<FallbackLoader />}><Dashboard /></Suspense>} />
           <Route path="patients" element={<Suspense fallback={<FallbackLoader />}><PatientModule /></Suspense>} />
-          <Route path="doctors" element={role === 'admin' ? <DoctorManagement /> : <Dashboard />} />
-          <Route path="schedule" element={(role === 'admin' || role === 'doctor') ? <DoctorSchedule /> : <Dashboard />} />
+          <Route path="doctors" element={role === 'admin' ? <Suspense fallback={<FallbackLoader />}><DoctorManagement /></Suspense> : <Dashboard />} />
+          <Route path="schedule" element={(role === 'admin' || role === 'doctor') ? <Suspense fallback={<FallbackLoader />}><DoctorSchedule /></Suspense> : <Dashboard />} />
           <Route path="analytics" element={<Suspense fallback={<FallbackLoader />}><AnalyticsModule /></Suspense>} />
-          <Route path="settings" element={<Settings />} />
+          <Route path="settings" element={<Suspense fallback={<FallbackLoader />}><Settings /></Suspense>} />
         </Route>
       </Routes>
     </BrowserRouter>

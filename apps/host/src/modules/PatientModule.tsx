@@ -102,6 +102,8 @@ const PatientModule: React.FC = () => {
   const [pdfPreviewPatient, setPdfPreviewPatient] = useState<Patient | null>(null);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [batchActionLoading, setBatchActionLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const PAGE_SIZE = 12;
 
   const toggleSelection = (e: React.MouseEvent, id: string) => {
     e.stopPropagation();
@@ -184,6 +186,11 @@ const PatientModule: React.FC = () => {
     }
   }, [role]);
 
+  // Reset pagination when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [search, filterStatus, sortBy, sortOrder]);
+
   const filtered = patients
     .filter(p => {
       const matchSearch = p.name.toLowerCase().includes(search.toLowerCase()) || (p.id && p.id.toLowerCase().includes(search.toLowerCase())) || p.condition.toLowerCase().includes(search.toLowerCase());
@@ -198,6 +205,9 @@ const PatientModule: React.FC = () => {
       
       return sortOrder === 'asc' ? comparison : -comparison;
     });
+
+  const paginated = filtered.slice(0, currentPage * PAGE_SIZE);
+  const hasMore = paginated.length < filtered.length;
 
   return (
     <>
@@ -323,7 +333,7 @@ const PatientModule: React.FC = () => {
                   <div className="space-y-2 mt-2"><GlowSkeleton className="h-3 w-full" /><GlowSkeleton className="h-3 w-3/4" /><GlowSkeleton className="h-3 w-5/6" /></div>
                 </div>
               ))
-            : filtered.map((patient) => {
+            : paginated.map((patient) => {
                 const sc = statusConfig[patient.status];
                 return (
                   <div key={patient.id} onClick={() => setSelectedPatient(patient)} className="bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.08)] border border-slate-100 dark:border-slate-800 hover:shadow-lg hover:-translate-y-0.5 transition-all group cursor-pointer">
@@ -403,7 +413,7 @@ const PatientModule: React.FC = () => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-50 dark:divide-slate-800">
-                  {filtered.map((patient) => {
+                  {paginated.map((patient) => {
                     const sc = statusConfig[patient.status];
                     return (
                       <tr key={patient.id} onClick={() => setSelectedPatient(patient)} className={`hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors group cursor-pointer ${selectedIds.includes(patient.id!) ? 'bg-blue-50/50 dark:bg-blue-900/10' : ''}`}>
@@ -451,6 +461,19 @@ const PatientModule: React.FC = () => {
               )}
             </div>
           )}
+        </div>
+      )}
+
+      {/* Load More Button */}
+      {hasMore && (
+        <div className="mt-8 flex justify-center">
+          <button 
+            onClick={() => setCurrentPage(prev => prev + 1)}
+            className="px-8 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl font-semibold text-blue-600 dark:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-all shadow-sm flex items-center gap-2 group"
+          >
+            <span>Load More Patients</span>
+            <TrendingUp size={16} className="group-hover:translate-y-1 transition-transform rotate-180" />
+          </button>
         </div>
       )}
       </div>
