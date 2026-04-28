@@ -21,24 +21,11 @@ npm run build
 
 ---
 
-## 🔐 Demo Credentials
+## 🔐 Demo Access
 
-Use the **"Quick Access"** buttons on the login screen for instant entry.
+The platform includes a **"Quick Access"** demo system. On the Login screen, you will find dedicated buttons for the **Admin Portal** and **Doctor Portal**. 
 
-### Administrative Accounts
-| Role | Email | Password |
-| :--- | :--- | :--- |
-| **Super Admin** | `admin@raga.ai` | `admin123` |
-| **Hospital Manager** | `manager@hospital.com` | `admin123` |
-
-### Doctor Accounts
-| Role | Email | Password |
-| :--- | :--- | :--- |
-| **Primary Doctor** | `koushi098@gmail.com` | `tu6uwq2lA1!` |
-| **Sample Doctor** | `doctor@hospital.com` | `password123` |
-
-> [!IMPORTANT]
-> **Authentication Lock**: Public registration has been disabled. Access is only granted to pre-approved accounts. If you are a new doctor, please contact your System Administrator to have your credentials provisioned.
+Clicking these buttons will automatically pre-fill the demo credentials and sign you in instantly.
 
 ---
 
@@ -55,12 +42,12 @@ The platform is integrated with **EmailJS** for branded communications:
 
 For deep technical insights, explore our documentation directory:
 
-*   **[Architecture Overview](./documents/architecture.md)**: Tech stack, component structure, and design system.
-*   **[Authentication Guide](./documents/authentication_guide.md)**: Deep dive into the Login flow, EmailJS integration, and Firebase Auth rules.
-*   **[Control Flow](./documents/control_flow.md)**: App initialization, routing, and error handling.
-*   **[Sequence Diagrams](./documents/sequence_diagrams.md)**: Visual workflows for registration, batch updates, and timings.
-*   **[Use Cases](./documents/use_cases.md)**: Comprehensive list of user interactions and flows.
-*   **[EmailJS Setup](./documents/emailjs_template.md)**: HTML templates and configuration for notifications.
+*   **[Architecture Overview](./apps/host/documents/architecture.md)**: Tech stack, component structure, and design system.
+*   **[Authentication Guide](./apps/host/documents/authentication_guide.md)**: Deep dive into the Login flow, EmailJS integration, and Firebase Auth rules.
+*   **[Control Flow](./apps/host/documents/control_flow.md)**: App initialization, routing, and error handling.
+*   **[Sequence Diagrams](./apps/host/documents/sequence_diagrams.md)**: Visual workflows for registration, batch updates, and timings.
+*   **[Use Cases](./apps/host/documents/use_cases.md)**: Comprehensive list of user interactions and flows.
+*   **[EmailJS Setup](./apps/host/documents/emailjs_template.md)**: HTML templates and configuration for notifications.
 
 ---
 

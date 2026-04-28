@@ -21,24 +21,11 @@ npm run build
 
 ---
 
-## 🔐 Demo Credentials
+## 🔐 Demo Access
 
-Use the **"Quick Access"** buttons on the login screen for instant entry.
+The platform includes a **"Quick Access"** demo system. On the Login screen, you will find dedicated buttons for the **Admin Portal** and **Doctor Portal**. 
 
-### Administrative Accounts
-| Role | Email | Password |
-| :--- | :--- | :--- |
-| **Super Admin** | `admin@raga.ai` | `admin123` |
-| **Hospital Manager** | `manager@hospital.com` | `admin123` |
-
-### Doctor Accounts
-| Role | Email | Password |
-| :--- | :--- | :--- |
-| **Primary Doctor** | `koushi098@gmail.com` | `tu6uwq2lA1!` |
-| **Sample Doctor** | `doctor@hospital.com` | `password123` |
-
-> [!IMPORTANT]
-> **Authentication Lock**: Public registration has been disabled. Access is only granted to pre-approved accounts. If you are a new doctor, please contact your System Administrator to have your credentials provisioned.
+Clicking these buttons will automatically pre-fill the demo credentials and sign you in instantly.
 
 ---
 
