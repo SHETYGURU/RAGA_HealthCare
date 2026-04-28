@@ -10,5 +10,6 @@
     "build": "npm run build --workspaces"
   },
   "devDependencies": {
+    "autoprefixer": "^10.5.0"
   }
 }
