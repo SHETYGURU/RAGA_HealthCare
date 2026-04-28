@@ -47,7 +47,6 @@ For deep technical insights, explore our documentation directory:
 *   **[Control Flow](./apps/host/documents/control_flow.md)**: App initialization, routing, and error handling.
 *   **[Sequence Diagrams](./apps/host/documents/sequence_diagrams.md)**: Visual workflows for registration, batch updates, and timings.
 *   **[Use Cases](./apps/host/documents/use_cases.md)**: Comprehensive list of user interactions and flows.
-*   **[EmailJS Setup](./apps/host/documents/emailjs_template.md)**: HTML templates and configuration for notifications.
 
 ---
 
