@@ -2,7 +2,7 @@
 
 Use these HTML templates in your EmailJS dashboard for a professional onboarding experience.
 
-## 1. Password Reset (template_3larvgd)
+## 1. Password Reset ([RESET_TEMPLATE_ID])
 **Subject**: Password Reset Request - RAGA HealthCare
 
 ```html
@@ -20,7 +20,7 @@ Use these HTML templates in your EmailJS dashboard for a professional onboarding
 </div>
 ```
 
-## 2. New Doctor Onboarding (template_dsbh4kf)
+## 2. New Doctor Onboarding ([DOCTOR_TEMPLATE_ID])
 **Subject**: Welcome to RAGA HealthCare - Your Account is Ready
 
 ```html
