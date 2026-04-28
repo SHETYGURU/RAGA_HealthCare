@@ -36,7 +36,17 @@ The `Layout` component wraps all internal routes and provides the Sidebar/Navbar
     *   `Admin`: Full access to Doctors, Patients, Analytics, and Admin Utilities.
     *   `Doctor`: Access to Patients, Schedule, and Analytics.
 
-## 3. Data Fetching Strategy
+## 3. Module Loading Flow (Lazy Loading)
+
+To optimize performance, the application uses **Dynamic Imports**:
+
+1.  **Request**: User navigates to a protected route (e.g., `/patients`).
+2.  **Suspense**: `App.tsx` identifies the route as a `lazy` component.
+3.  **Fallback**: The `FallbackLoader` (Skeleton UI) is displayed instantly.
+4.  **Fetch**: The browser downloads the specific chunk (e.g., `PatientModule-[hash].js`) and its vendor dependencies in parallel.
+5.  **Render**: Once downloaded, the module replaces the loader with a smooth fade-in animation.
+
+## 4. Data Fetching Strategy
 
 The application uses **React Hooks** combined with **Firestore Services**:
 

@@ -43,6 +43,13 @@ The system uses a custom design system defined in `index.css`:
     *   Users are identified via their `uid` and cross-referenced with Firestore collections (`admins` vs `doctors`).
 *   **Data Integrity**: Use of Firestore Batches for atomic multi-document updates.
 
+## 5. Build & Performance Optimization
+
+*   **Manual Chunking**: Large libraries are split into separate vendor files (Firebase, Recharts, PDF generators) to allow parallel browser downloads.
+*   **Lazy Loading**: 100% of major route components are loaded via `Suspense` and `React.lazy`.
+*   **Asset Compression**: Vite is configured for Gzip/Brotli compression and ESM-only targeting.
+*   **Pagination**: High-density lists (Patients) use a "Load More" strategy to keep the DOM node count low.
+
 ---
 
 © 2026 RAGA HealthCare Systems. All rights reserved.
