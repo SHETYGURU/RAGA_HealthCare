@@ -12,6 +12,8 @@ The platform uses **Firebase Authentication** as the primary identity provider a
   - `admins` -> Full System Access.
   - `doctors` -> Doctor Dashboard & Patient Management.
 
+**Portal URL**: `https://reagahealthcare.netlify.app/login`
+
 ---
 
 ## 📧 EmailJS Integration

@@ -2,6 +2,8 @@
 
 Welcome to the **RAGA HealthCare** platform, a premium, high-performance hospital management system built with React, TypeScript, and Firebase. This platform is designed for state-of-the-art medical facility management.
 
+**Live Demo**: [reagahealthcare.netlify.app](https://reagahealthcare.netlify.app/)
+
 ## 🚀 Quick Start
 
 ### 1. Installation
