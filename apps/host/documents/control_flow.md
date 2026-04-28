@@ -21,7 +21,7 @@ sequenceDiagram
         Login->>Dashboard: Redirect to /
     else "Forgot Password" Clicked
         Login->>Firebase Auth: sendPasswordResetEmail
-        Login->>EmailJS: send (template_3larvgd)
+        Login->>EmailJS: send ([RESET_TEMPLATE_ID])
         Login-->>User: Show "Check Inbox" Message
     end
 ```

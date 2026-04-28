@@ -78,13 +78,18 @@ const DoctorManagement: React.FC = () => {
       }, newUserUid);
 
       // 4. Send real email via EmailJS
-      await emailjs.send('service_raga', 'template_dsbh4kf', {
-        to_email: email,
-        to_name: name,
-        username: email,
-        password: tempPassword,
-        login_url: window.location.origin + '/login'
-      }, 'Hj5oyCaY6ckccJzRE');
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID, 
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID_DOCTOR || 'template_dsbh4kf', 
+        {
+          to_email: email,
+          to_name: name,
+          username: email,
+          password: tempPassword,
+          login_url: window.location.origin + '/login'
+        }, 
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
 
       // 5. Show Acknowledgment that the email was indeed sent
       setMockEmail({

@@ -18,7 +18,7 @@ sequenceDiagram
     User->>Login: Enters Email & Submits
     Login->>Auth: sendPasswordResetEmail(email)
     Auth->>Inbox: Sends Official Secure Link
-    Login->>Mail: send(template_3larvgd)
+    Login->>Mail: send([RESET_TEMPLATE_ID])
     Mail->>Inbox: Sends Branded Reset Notification
     Login->>User: Displays "Reset Link Sent"
 ```

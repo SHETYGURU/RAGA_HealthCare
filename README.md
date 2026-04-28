@@ -32,9 +32,9 @@ Clicking these buttons will automatically pre-fill the demo credentials and sign
 ## 📧 Email & Notifications
 
 The platform is integrated with **EmailJS** for branded communications:
-- **Service ID**: `service_raga`
-- **Password Reset Template**: `template_3larvgd`
-- **Account Creation Template**: `template_dsbh4kf`
+- **Service ID**: `[YOUR_SERVICE_ID]`
+- **Password Reset Template**: `[RESET_TEMPLATE_ID]`
+- **Account Creation Template**: `[DOCTOR_TEMPLATE_ID]`
 
 ---
 
