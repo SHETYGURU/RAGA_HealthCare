@@ -258,7 +258,7 @@ const Dashboard: React.FC = () => {
                     {p.name.split(' ').map((n: string) => n[0]).join('')}
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-slate-800 dark:text-100">{p.name}</p>
+                    <p className="text-sm font-semibold text-slate-800 dark:text-white">{p.name}</p>
                     <p className="text-xs text-slate-500 dark:text-slate-400">{p.condition}</p>
                   </div>
                 </div>

@@ -21,9 +21,12 @@ const Sidebar: React.FC = () => {
     { to: '/settings', icon: <Settings size={20} />, label: t('nav.settings'), key: 'settings' as const, roles: ['admin', 'doctor'] },
   ];
 
-  const visibleLinks = navLinks.filter((link) =>
-    sectionVisibility[link.key] !== false && link.roles.includes(role || '')
-  );
+  const visibleLinks = navLinks.filter((link) => {
+    const isVisible = (link.key as any) in sectionVisibility 
+      ? sectionVisibility[link.key as keyof typeof sectionVisibility] !== false 
+      : true;
+    return isVisible && link.roles.includes(role || '');
+  });
 
   return (
     <>

@@ -90,7 +90,6 @@ const Settings: React.FC = () => {
     { key: 'patients' as const, label: t('nav.patients'), icon: <Users size={18} /> },
     { key: 'doctors' as const, label: t('nav.doctors'), icon: <Users size={18} /> },
     { key: 'analytics' as const, label: t('nav.analytics'), icon: <Activity size={18} /> },
-    { key: 'settings' as const, label: t('nav.settings'), icon: <SettingsIcon size={18} /> },
   ];
 
   const menuItems = [

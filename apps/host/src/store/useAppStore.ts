@@ -15,7 +15,6 @@ interface SectionVisibility {
   patients: boolean;
   doctors: boolean;
   analytics: boolean;
-  settings: boolean;
 }
 
 interface AppState {
@@ -53,7 +52,6 @@ export const useAppStore = create<AppState>()(
         patients: true,
         doctors: true,
         analytics: true,
-        settings: true,
       },
       notifications: mockNotifications,
       toggleSidebar: () => set((state) => ({ sidebarOpen: !state.sidebarOpen })),
